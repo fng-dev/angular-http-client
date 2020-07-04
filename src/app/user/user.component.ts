@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { UserService } from '../../app/services/user.service';
 import { User } from '../../app/models/user';
+import { HttpClient} from '@angular/common/http';
 
 @Component({
     selector: 'app-user',
@@ -13,7 +14,8 @@ export class UserComponent implements OnInit {
     user = {} as User;
     constructor(
         private route: ActivatedRoute,
-        private userService: UserService
+        private userService: UserService,
+        private http: HttpClient
         ) { }
 
     ngOnInit(): void {
@@ -27,6 +29,13 @@ export class UserComponent implements OnInit {
                 })
             })
         });
+
+
+        this.http.get("https://api.github.com/users").subscribe((response: []) => {
+            response.map((data) => {
+                console.log(data)
+            })
+        })
     }
 
 }
