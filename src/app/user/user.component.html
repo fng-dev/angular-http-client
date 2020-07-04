@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="alert alert-light mt-5">
+        <div class="d-flex justify-content-between">
+            <div><h3>Repositorios de {{user.name}}</h3></div>
+            <div><a class="btn btn-secondary" href="/home" role="button">Voltar</a></div>
+        </div>
+        <p class="lead text-center"></p>
+        <hr class="my-4">
+        <div *ngFor="let repo of user.repositorios" class="border border-secondary rounded p-3 m-2">
+            <div>Description: {{repo.description}}</div>
+            <div>Forks: {{repo.forks}}</div>
+            <div>Nome: {{repo.name}}</div>
+            <div>Url: {{repo.url}}</div>
+        </div>
+
+    </div>
+</div>

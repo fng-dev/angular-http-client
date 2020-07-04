@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3 p-1 mt-5" *ngFor="let user of users">
+            <div class="card">
+                <img src={{user.avatar_url}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Username: {{user.login}}</h5>
+                    <p class="card-text">
+                        <span>ID: # {{user.id}}</span>
+                    </p>
+                    <a href="/user/{{user.login}}" class="btn btn-primary">Visualizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
