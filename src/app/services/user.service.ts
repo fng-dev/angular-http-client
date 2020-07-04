@@ -41,7 +41,7 @@ export class UserService {
         catchError(this.handleError))
   }
 
-  // Obtem um carro pelo id
+  // Obtem um user pelo id
   getUserById(id: number): Observable<User> {
     return this.httpClient.get<User>(this.url + '/' + id)
       .pipe(
